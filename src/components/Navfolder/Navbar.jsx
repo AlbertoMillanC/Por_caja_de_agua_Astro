@@ -7,7 +7,7 @@ function Navbar() {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <a className="text-xl font-bold text-gray-800 uppercase hover:text-gray-700" href="#">
-              Mi sitio web
+              Artes escenicas
             </a>
             <button className="text-gray-500 focus:outline-none lg:hidden ml-4">
               <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
@@ -25,7 +25,7 @@ function Navbar() {
                   className="px-4 py-2 text-gray-700 font-bold hover:text-gray-900"
                   href="#"
                 >
-                  Inicio
+                  Trayectoria
                 </a>
               </li>
               <li>
