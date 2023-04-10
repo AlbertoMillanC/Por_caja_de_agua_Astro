@@ -4,13 +4,23 @@ import Footer from '../components/reactComponents/Footer.jsx';
 import Main from '../components/reactComponents/Main.jsx';
 import Navbar from '../components/Navfolder/Navbar.jsx';
 import Formulario from '../components/reactComponents/Formulario.jsx';
+import MainHead from "../components/MainHead.astro";
+import Nav from "../components/Nav.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import type { Project } from "../types";
+import buttoncompra from "../components/reactComponents/ButtonCompra";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 
 ---
+<MainHead
+title="Desarrollo de paginas web"
+my-2ription="¿Buscas una solución profesional y efectiva para tu negocio en línea? Ofrecemos servicios de diseño y desarrollo de páginas web y tiendas en línea personalizadas para adaptarnos a tus necesidades. Contamos con un equipo de expertos en tecnología y marketing que trabajarán contigo para crear una presencia en línea atractiva y efectiva para tu negocio. ¡Contáctanos hoy para más información y una cotización gratuita!"
 
+/>
 <Layout title="Proyecto Caja de Agua.">
-	
 </Layout>
 <Navbar/>
 <Main/>
