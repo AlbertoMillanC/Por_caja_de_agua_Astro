@@ -8,13 +8,265 @@ import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 import type { Project } from "../types";
-import buttoncompra from "../components/reactComponents/ButtonCompra";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 
 
 ---
+<html lang="es">
+    <head>
+        <MainHead
+          title="Desarrollo de paginas web"
+          my-2ription="¿Buscas una solución profesional y efectiva para tu negocio en línea? Ofrecemos servicios de diseño y desarrollo de páginas web y tiendas en línea personalizadas para adaptarnos a tus necesidades. Contamos con un equipo de expertos en tecnología y marketing que trabajarán contigo para crear una presencia en línea atractiva y efectiva para tu negocio. ¡Contáctanos hoy para más información y una cotización gratuita!"
+        />
+        <style>
+          .wrapper {
+            margin-top: 2em;
+            margin-bottom: 2em;
+          }
+    
+          .hero {
+            position: relative;
+            overflow: hidden;
+          }
+    
+          @media (min-width: 750px) {
+            .hero {
+              height: 45vw;
+            }
+          }
+    
+          .img {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+    
+          .gradient,
+          .gradient2 {
+            background-image: url("/assets/mesh-gradient.jpg");
+            background-size: cover;
+            pointer-events: none;
+            mix-blend-mode: screen;
+            opacity: 0.85;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+          }
+    
+          .gradient2 {
+            mix-blend-mode: multiply;
+            background-size: cover;
+          }
+    
+          .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding-left: 2rem;
+          }
+    
+          @media (min-width: 750px) {
+            .overlay {
+              padding-left: 4rem;
+            }
+          }
+    
+          .title {
+            font-weight: 900;
+            font-size: var(--f-u6);
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+          }
+    
+          @media (min-width: 750px) {
+            .title {
+              font-size: var(--f-u12);
+            }
+          }
+    
+          .grid {
+            display: grid;
+            grid-gap: 2rem;
+          }
+    
+          @media (min-width: 1200px) {
+            .grid {
+              grid-template-columns: 2fr 1fr;
+            }
+          }
+    
+          .sectionTitle {
+            font-weight: 700;
+            font-size: var(--f-u4);
+            margin-top: 0.75rem;
+            margin-bottom: 0.75rem;
+            
+          }
+    
+          .roles {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            gap: 0.5em;
+            font-size: var(--f-d1);
+          }
+    
+          .role1 {
+            position: relative;
+            display: flex;
+            white-space: nowrap;
+            font-weight: 400;
+            color: var(--t-fg);
+            padding: 0.25em 0.5em;
+            z-index: 2;
+            font-size: larger;
+          }
+    
+          @media (min-width: 750px) {
+            .role1 {
+              font-size: var(--f-u3);
+            }
+          }
+    
+          .role1:nth-of-type(1) .invert {
+            background-color: var(--c-pink);
+          }
+    
+          .role1:nth-of-type(2) .invert {
+            background-color: var(--c-blue);
+          }
+    
+          .role1:nth-of-type(3) .invert {
+            background-color: var(--c-green);
+          }
+    
+          .role1:hover .invert {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          }
+    
+          .roles {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            gap: 0.5em;
+            font-size: var(--f-d1);
+          }
+    
+          .role {
+            position: relative;
+            display: inline-block;
+            white-space: nowrap;
+            font-weight: 900;
+            color: var(--t-bg);
+            background-color: var(--t-fg);
+            padding: 0.25em 0.5em;
+            z-index: 2;
+          }
+    
+          @media (min-width: 750px) {
+            .role {
+              font-size: var(--f-u3);
+            }
+          }
+    
+          .role:nth-of-type(1) .invert {
+            background-color: var(--c-pink);
+          }
+    
+          .role:nth-of-type(2) .invert {
+            background-color: var(--c-blue);
+          }
+    
+          .role:nth-of-type(3) .invert {
+            background-color: var(--c-green);
+          }
+    
+          .role:hover .invert {
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+          }
+    
+          .invert {
+            position: absolute;
+            color: var(--t-fg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            clip-path: polygon(0% 100%, 100% 100%, 100% 200%, 0% 200%);
+            transition: clip-path cubic-bezier(0.4, 0, 0.5, 1) 150ms;
+          }
+    
+          .my-2 {
+            font-size: var(--f-u1);
+            margin-top: 1.5rem;
+            margin-bottom: 0;
+          }
+    
+          .subtitle {
+            display: block;
+            font-weight: 400;
+            font-size: var(--f-d6);
+            letter-spacing: -0.0625em;
+          }
+    
+          .bio {
+            line-height: 2;
+            margin-bottom: 2rem;
+          }
+    
+          .bio > span:first-of-type {
+            line-height: 1;
+            margin-bottom: 0.5em;
+            display: block;
+            font-weight: 700;
+            font-size: var(--f-u4);
+          }
+    
+          .buttonContainer {
+            text-align: center;
+            margin-top: 2em;
+          }
+        </style>
+    </head>
+    <header class="hero flex-1">
+        <img
+          class="img"
+          src="/assets/image_es.jpg"
+         srcset="/assets/image_es.jpg 800w,/assets/image_es.jpg 1200w,/assets/image_es.jpg 2400w"
+          sizes="(max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (max-width: 2400px) 2400px, 1200px"
+        />
+       
+            <p class="role1">☁Cloud</p>
+            <p class="role1">🔧Apps</p>
+            <p class="role1">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect x="2" y="5" width="20" height="14" rx="2" fill="#E5E5E5"
+                ></rect>
+                <path d="M22 18H2V6H22V18Z" fill="#E5E5E5"></path>
+              </svg>
+              Chat IA
+            </p>
+          </div>
+        </div>
+    </header>
 <MainHead
 title="Desarrollo de paginas web"
 my-2ription="¿Buscas una solución profesional y efectiva para tu negocio en línea? Ofrecemos servicios de diseño y desarrollo de páginas web y tiendas en línea personalizadas para adaptarnos a tus necesidades. Contamos con un equipo de expertos en tecnología y marketing que trabajarán contigo para crear una presencia en línea atractiva y efectiva para tu negocio. ¡Contáctanos hoy para más información y una cotización gratuita!"
@@ -25,4 +277,5 @@ my-2ription="¿Buscas una solución profesional y efectiva para tu negocio en l�
 <Navbar/>
 <Main/>
 <Footer/>
+</html>
 
